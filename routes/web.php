@@ -24,3 +24,20 @@ Route::get('/about', function () {
 Route::get('/kontak', function () {
     return 'Halaman Kontak Kami';
 });
+Route::get('/routing1', function () {
+    return view('routing1');
+});
+
+Route::get('/routing2', function () {
+    return view('routing2');
+});
+
+Route::middleware('middleware1')->group(function () {
+    Route::get('/routing1', function () {
+        return view('routing1');
+    });
+
+    Route::get('/routing2', function () {
+        return view('routing2');
+    });
+});
